@@ -9,7 +9,7 @@ services:
     ports:
       - 6379:6379/tcp
     volumes:
-      - "./redis:/data"
+      - "./redis-data:/data"
       - "./redis-conf/redis.conf:/usr/local/etc/redis/redis.conf:ro"
     restart: always
     volumes_from:

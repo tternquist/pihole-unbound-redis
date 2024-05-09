@@ -8,3 +8,4 @@ unbound-keys/unbound_control.key
 unbound-keys/unbound_control.pem
 unbound-keys/unbound_server.key
 unbound-keys/unbound_server.pem
+redis-data/dump.rdb
