@@ -51,7 +51,7 @@ net.core.wmem_max=8388608
 ```
 
 ## Enabling Unbound DNS Remote Control
-Run the following on the host machine:
+Run the following on the host machine within the project root directory:
 ```
 sudo chown 1500:1500 unbound-keys
 ```
