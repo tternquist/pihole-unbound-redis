@@ -7,3 +7,5 @@ redis/dump.rdb
 etc-dnsmasq.d
 etc-pihole
 config/a-records.conf
+config/tuning.conf
+config/remote-control.conf
