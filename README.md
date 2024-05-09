@@ -38,10 +38,13 @@ net.core.wmem_max=8388608
 ```
 
 ## Enabling Unbound DNS Remote Control
-
 Run the following on the host machine:
 ```
-mkdir /etc/unbound/keys
+chown 1500:1500 unbound-keys
+```
+
+Run the following attached to the container:
+```
 unbound-control-setup -d /etc/unbound/keys
 ```
 
