@@ -7,8 +7,10 @@ The default configuration is tuned for performance:
 - Unbound is configured to serve expired, min ttl = 300/max ttl = 86400, and prefetch= on
   
 ## Getting Started
-To run, execute the following command
-` docker compose -f "pihole-compose.yml" up -d --build `
+To run, execute the following command from the project root directory:
+```
+docker compose -f "pihole-unbound-redis-compose.yml" up -d --build
+ ```
 
 ## Accessing the Pihole Web UI
 Access at 
@@ -16,9 +18,11 @@ Access at
 
 If you are running Pihole for the first time you will need to set a password to access the Web UI. 
 
-Attach to the pihole container shell and run the following 
+Attach shell to the pihole container shell and run the following 
 
-`pihole -a -p`
+```
+pihole -a -p
+```
 
 ## Tuning
 
@@ -54,12 +58,12 @@ Run the following on the host machine within the project root directory:
 sudo chown 1500:1500 unbound-keys
 ```
 
-Run the following attached to the container:
+Run the following from attached shell on the unbound container:
 ```
 unbound-control-setup -d /etc/unbound/keys
 ```
 
-Create config/remote-control.conf with the following:
+Create (or copy from examples directory) unbound-config/custom/remote-control.conf with the following:
 
 ```
 remote-control:
