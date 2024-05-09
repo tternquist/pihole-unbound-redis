@@ -46,7 +46,7 @@ net.core.wmem_max=8388608
 
 Custom Unbound configuration can be stored at `/unbound-config/custom/*.conf`
 
-Examples can be found at `unbound-config/examples`\
+Examples can be found at `unbound-config/examples` and will override base configuration.
 
 #### Enabling Unbound DNS Remote Control
 Run the following on the host machine:
@@ -75,8 +75,9 @@ Once added, restart the container for unbound for the changes to take effect.
 
 Custom Redis configuration can be stored at `/redis-config/custom/*.conf`
 
-Examples can be found at `redis-config/examples`
+Examples can be found at `redis-config/examples` and will override base configuration.
 
+#### Redis Socket Communcation
 Redis and Unbound communicate via unix sockets to reduce overhead
 
 In redis.conf, sockets are configured:
