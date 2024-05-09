@@ -10,7 +10,7 @@ services:
       - 6379:6379/tcp
     volumes:
       - "./redis-data:/data"
-      - "./redis-conf/redis.conf:/usr/local/etc/redis/redis.conf:ro"
+      - "./redis-conf:/usr/local/etc/redis:ro"
     restart: always
     volumes_from:
     - tmp
