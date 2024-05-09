@@ -21,3 +21,21 @@ To run, execute the following command
 - `sudo nano /etc/sysctl.conf `
 - `net.core.rmem_max=8388608`
 - `net.core.wmem_max=8388608`
+
+
+## Enabling Unbound DNS Remote Control
+
+Run the following on the host machine:
+```
+    $ mkdir /etc/unbound/keys
+    $ unbound-control-setup -d /etc/unbound/keys
+```
+
+```
+remote-control:
+    control-enable: yes 
+    server-key-file: "/etc/unbound/keys/unbound_server.key"
+    server-cert-file: "/etc/unbound/keys/unbound_server.pem"
+    control-key-file: "/etc/unbound/keys/unbound_control.key"
+    control-cert-file: "/etc/unbound/keys/unbound_control.pem"
+```
