@@ -7,8 +7,8 @@ The default configuration is tuned for performance:
 - Unbound is configured to serve expired, min ttl = 300/max ttl = 86400, and prefetch= on
   
 ## Getting Started
-To run, execute the following command
-` docker compose -f "pihole-unbound-redis-compose" up -d --build `
+To run, execute the following command from the project root directory:
+` docker compose -f "pihole-unbound-redis-compose.yml" up -d --build `
 
 ## Accessing the Pihole Web UI
 Access at 
