@@ -31,6 +31,8 @@ Run the following on the host machine:
     $ unbound-control-setup -d /etc/unbound/keys
 ```
 
+Create config/remote-control.conf with the following:
+
 ```
 remote-control:
     control-enable: yes 
