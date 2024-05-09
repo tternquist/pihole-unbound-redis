@@ -56,3 +56,13 @@ remote-control:
     control-cert-file: "/etc/unbound/keys/unbound_control.pem"
 ```
 Once added, restart the container for unbound for the changes to take effect.
+
+## Redis Notes
+Redis and Unbound communicate via unix sockets to reduce overhead
+
+In redis.conf, sockets are configured:
+
+```
+unixsocket /tmp/docker/redis.sock
+unixsocketperm 777
+```
