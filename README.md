@@ -8,7 +8,7 @@ The default configuration is tuned for performance:
   
 ## Getting Started
 To run, execute the following command
-` docker compose -f "pihole-compose.yml" up -d --build `
+` docker compose -f "pihole-unbound-redis-compose" up -d --build `
 
 ## Accessing the Pihole Web UI
 Access at 
