@@ -1,0 +1,66 @@
+services:
+  redis:
+    image: redis:alpine
+    container_name: unbound-redis-pihole
+    environment: 
+      - TZ=America/New_York
+    hostname: redis
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379/tcp
+    volumes:
+      - "./redis:/data"
+      - "./redis-conf/redis.conf:/usr/local/etc/redis/redis.conf:ro"
+    restart: always
+    volumes_from:
+    - tmp
+    depends_on:
+      - tmp
+  unbound:
+    image: crazymax/unbound
+    hostname: unbound
+    container_name: unbound-pihole
+    environment: 
+      - TZ=America/New_York
+    depends_on:
+      - redis
+      - tmp
+    volumes:
+      - "./config:/config:ro"
+      - "./keys:/etc/unbound/keys"
+    restart: always
+    ports:
+      - target: 5053
+        published: 5053
+        protocol: tcp
+      - target: 5053
+        published: 5053
+        protocol: udp
+    volumes_from:
+      - tmp
+  tmp:
+      image: busybox
+      command: chmod -R 777 /tmp/docker
+      volumes:
+          - /tmp/docker        
+  pihole:
+      container_name: pihole
+      image: pihole/pihole:latest
+      # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+      dns:
+        - 127.0.0.1
+        - 8.8.8.8
+      ports:
+        - "53:53/tcp"
+        - "53:53/udp"
+        - "80:80/tcp"
+      environment:
+        TZ: 'America/New_York'
+        WEB_PORT: 80
+        PIHOLE_DNS_: 'unbound#5053'
+      # Volumes store your data between container upgrades
+      volumes:
+        - './etc-pihole:/etc/pihole'
+        - './etc-dnsmasq.d:/etc/dnsmasq.d'
+      #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+      restart: unless-stopped
