@@ -59,7 +59,7 @@ Run the following attached to the container:
 unbound-control-setup -d /etc/unbound/keys
 ```
 
-Create config/remote-control.conf with the following:
+Create (or copy from examples directory) unbound-config/custom/remote-control.conf with the following:
 
 ```
 remote-control:
