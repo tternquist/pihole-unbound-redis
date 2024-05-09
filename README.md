@@ -1,9 +1,14 @@
 # Docker Compose for Pihole - Unbound - Redis Setup
+## About
+This project is designed to support a docker compose deployment of Pihole using Unbound DNS upstream with a persistent Redis cache for Unbound. 
 
+The default configuration is tuned for performance:
+- Unbound is configured as a forwarder, see forward-records.conf
+- Unbound is configured to serve expired, min ttl = 300/max ttl = 86400, and prefetch on
+  
 ## Getting Started
 To run, execute the following command
 ` docker compose -f "pihole-compose.yml" up -d --build `
-
 
 ## Tuning
 
