@@ -18,9 +18,11 @@ Access at
 
 If you are running Pihole for the first time you will need to set a password to access the Web UI. 
 
-Attach to the pihole container shell and run the following 
+Attach shell to the pihole container shell and run the following 
 
-`pihole -a -p`
+```
+pihole -a -p
+```
 
 ## Tuning
 
@@ -56,7 +58,7 @@ Run the following on the host machine within the project root directory:
 sudo chown 1500:1500 unbound-keys
 ```
 
-Run the following attached to the container:
+Run the following from attached shell on the unbound container:
 ```
 unbound-control-setup -d /etc/unbound/keys
 ```
