@@ -1,4 +1,3 @@
-redis/dump.rdb
 .env
 etc-dnsmasq.d
 etc-pihole
