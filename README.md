@@ -11,6 +11,9 @@ To run, execute the following command
 ` docker compose -f "pihole-compose.yml" up -d --build `
 
 ## Accessing the Pihole Web UI
+Access at 
+`http://{$HOSTNAME}/admin`
+
 If you are running Pihole for the first time you will need to set a password to access the Web UI. 
 
 Attach to the pihole container shell and run the following 
@@ -35,10 +38,13 @@ net.core.wmem_max=8388608
 ```
 
 ## Enabling Unbound DNS Remote Control
-
 Run the following on the host machine:
 ```
-mkdir /etc/unbound/keys
+chown 1500:1500 unbound-keys
+```
+
+Run the following attached to the container:
+```
 unbound-control-setup -d /etc/unbound/keys
 ```
 
@@ -53,3 +59,13 @@ remote-control:
     control-cert-file: "/etc/unbound/keys/unbound_control.pem"
 ```
 Once added, restart the container for unbound for the changes to take effect.
+
+## Redis Notes
+Redis and Unbound communicate via unix sockets to reduce overhead
+
+In redis.conf, sockets are configured:
+
+```
+unixsocket /tmp/docker/redis.sock
+unixsocketperm 777
+```
