@@ -12,7 +12,7 @@ To run, execute the following command
 - `sudo sysctl -w net.core.wmem_max=8388608`
 - `sudo sysctl -w net.core.rmem_max=8388608`
 
-### Add to host machine sysctl.conf to persist
-` sudo nano /etc/sysctl.conf `
-net.core.rmem_max=8388608
-net.core.wmem_max=8388608
+### Edit to host machine sysctl.conf to persist
+- `sudo nano /etc/sysctl.conf `
+- `net.core.rmem_max=8388608`
+- `net.core.wmem_max=8388608`
