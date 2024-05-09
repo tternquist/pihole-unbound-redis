@@ -22,6 +22,19 @@ Attach to the pihole container shell and run the following
 
 ## Tuning
 
+### Unbound Configuration Tuning
+
+Custom Unbound configuration can be stored at `/unbound-config/custom/*.conf`
+
+Examples can be found at `unbound-config/examples`
+
+### Redis Configuration Tuning
+
+Custom Redis configuration can be stored at `/redis-config/custom/*.conf`
+
+Examples can be found at `redis-config/examples`
+
+
 ### Run these on your host machine to update without restarting
 ```
 sudo sysctl vm.overcommit_memory=1
