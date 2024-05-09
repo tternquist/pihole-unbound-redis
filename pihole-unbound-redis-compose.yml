@@ -1,7 +1,6 @@
 services:
   redis:
     image: redis:alpine
-    container_name: unbound-redis-pihole
     environment: 
       - TZ=America/New_York
     hostname: redis
@@ -20,7 +19,6 @@ services:
   unbound:
     image: crazymax/unbound
     hostname: unbound
-    container_name: unbound-pihole
     environment: 
       - TZ=America/New_York
     depends_on:
@@ -40,9 +38,7 @@ services:
       volumes:
           - /tmp/docker        
   pihole:
-      container_name: pihole
       image: pihole/pihole:latest
-      # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
       dns:
         - 127.0.0.1
         - 8.8.8.8
