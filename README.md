@@ -45,3 +45,4 @@ remote-control:
     control-key-file: "/etc/unbound/keys/unbound_control.key"
     control-cert-file: "/etc/unbound/keys/unbound_control.pem"
 ```
+Once added, restart the container for unbound for the changes to take effect.
