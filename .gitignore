@@ -1,11 +1,10 @@
-keys/unbound_control.key
-keys/unbound_control.pem
-keys/unbound_server.key
-keys/unbound_server.pem
 redis/dump.rdb
 .env
 etc-dnsmasq.d
 etc-pihole
-config/a-records.conf
-config/tuning.conf
-config/remote-control.conf
+unbound-config/a-records.conf
+unbound-config/remote-control.conf
+unbound-keys/unbound_control.key
+unbound-keys/unbound_control.pem
+unbound-keys/unbound_server.key
+unbound-keys/unbound_server.pem

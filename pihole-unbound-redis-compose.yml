@@ -26,8 +26,8 @@ services:
       - redis
       - tmp
     volumes:
-      - "./config:/config:ro"
-      - "./keys:/etc/unbound/keys"
+      - "./unbound-config:/config:ro"
+      - "./unbound-keys:/etc/unbound/keys"
     restart: always
     ports:
       - target: 5053
