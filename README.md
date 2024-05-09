@@ -38,10 +38,13 @@ net.core.wmem_max=8388608
 ```
 
 ## Enabling Unbound DNS Remote Control
-
 Run the following on the host machine:
 ```
-mkdir /etc/unbound/keys
+chown 1500:1500 unbound-keys
+```
+
+Run the following attached to the container:
+```
 unbound-control-setup -d /etc/unbound/keys
 ```
 
@@ -56,3 +59,13 @@ remote-control:
     control-cert-file: "/etc/unbound/keys/unbound_control.pem"
 ```
 Once added, restart the container for unbound for the changes to take effect.
+
+## Redis Notes
+Redis and Unbound communicate via unix sockets to reduce overhead
+
+In redis.conf, sockets are configured:
+
+```
+unixsocket /tmp/docker/redis.sock
+unixsocketperm 777
+```
