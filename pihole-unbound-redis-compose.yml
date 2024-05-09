@@ -50,6 +50,7 @@ services:
       environment:
         TZ: 'America/New_York'
         PIHOLE_DNS_: 'unbound#5053'
+        DNS1: 'unbound#5053'
       # Volumes store your data between container upgrades
       volumes:
         - './etc-pihole:/etc/pihole'

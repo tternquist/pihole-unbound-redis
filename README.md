@@ -10,6 +10,13 @@ The default configuration is tuned for performance:
 To run, execute the following command
 ` docker compose -f "pihole-compose.yml" up -d --build `
 
+## Accessing the Pihole Web UI
+If you are running Pihole for the first time you will need to set a password to access the Web UI. 
+
+Attach to the pihole container shell and run the following 
+
+`pihole -a -p`
+
 ## Tuning
 
 ### Run these on your host machine to update without restarting
