@@ -92,4 +92,4 @@ unixsocketperm 777
 ```
 
 ## Thanks
-Special thanks to crazy-max for their Unbound docker image - https://github.com/crazy-max/docker-unbound
+Special thanks to [crazy-max](https://github.com/crazy-max) for their [Unbound docker image](https://github.com/crazy-max/docker-unbound) 
