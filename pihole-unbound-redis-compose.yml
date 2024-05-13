@@ -17,7 +17,7 @@ services:
     depends_on:
       - tmp
   unbound:
-    image: ghcr.io/tternquist/unbound:local
+    image: crazymax/unbound
     hostname: unbound
     environment: 
       - TZ=America/New_York
