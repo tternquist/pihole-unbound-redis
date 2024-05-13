@@ -39,6 +39,7 @@ services:
           - /tmp/docker        
   pihole:
       image: pihole/pihole:latest
+      hostname: ${PIHOLE_HOSTNAME:-pihole}
       dns:
         - 127.0.0.1
         - 8.8.8.8
@@ -57,4 +58,4 @@ services:
       #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
       depends_on:
         - unbound
-      restart: unless-stopped
+      restart: always
