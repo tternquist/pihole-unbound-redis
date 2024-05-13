@@ -90,3 +90,6 @@ In redis.conf, sockets are configured:
 unixsocket /tmp/docker/redis.sock
 unixsocketperm 777
 ```
+
+## Thanks
+Special thanks to [crazy-max](https://github.com/crazy-max) for their [Unbound docker image](https://github.com/crazy-max/docker-unbound) 
