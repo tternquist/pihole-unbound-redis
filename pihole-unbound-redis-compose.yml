@@ -50,9 +50,8 @@ services:
         - "80:80/tcp"
       environment:
         TZ: 'America/New_York'
-       # PIHOLE_DNS_: 'unbound#5053'
-        FTLCONF_dns_upstreams: 'unbound#5053'
-        FTLCONF_dns_listeningMode : 'all'
+        FTLCONF_dns_upstreams: 'unbound#5053' 
+        FTLCONF_dns_listeningMode : 'all' # needed when docker in bridge network mode
       # Volumes store your data between container upgrades
       volumes:
         - './etc-pihole:/etc/pihole'
