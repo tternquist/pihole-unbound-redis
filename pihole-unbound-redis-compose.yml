@@ -33,7 +33,7 @@ services:
     volumes_from:
       - tmp
   tmp:
-      image: busybox
+      image: busybox:1.36.1
       command: chmod -R 777 /tmp/docker
       volumes:
           - /tmp/docker        
