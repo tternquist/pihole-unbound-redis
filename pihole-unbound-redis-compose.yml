@@ -39,6 +39,7 @@ services:
           - /tmp/docker        
   pihole:
       image: pihole/pihole:development-v6
+      hostname: ${PIHOLE_HOSTNAME:-pihole}
       dns:
         - 127.0.0.1
         - 8.8.8.8
