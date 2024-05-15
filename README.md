@@ -5,7 +5,14 @@ This project is designed to support a docker compose deployment of Pihole using 
 The default configuration is tuned for performance:
 - Unbound is configured as a forwarder, see forward-records.conf
 - Unbound is configured to serve expired, min ttl = 300/max ttl = 86400, and prefetch= on
-  
+
+### Blocklists
+- https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt 
+- https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt
+- https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/doh.txt
+- https://nsfw.oisd.nl/
+
+
 ## Getting Started
 To run, execute the following command from the project root directory:
 ```
