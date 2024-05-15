@@ -38,7 +38,7 @@ services:
       volumes:
           - /tmp/docker        
   pihole:
-      image: pihole/pihole:2024.05.0
+      image: pihole/pihole:development-v6
       dns:
         - 127.0.0.1
         - 8.8.8.8
@@ -49,7 +49,9 @@ services:
         - "80:80/tcp"
       environment:
         TZ: 'America/New_York'
-        PIHOLE_DNS_: 'unbound#5053'
+       # PIHOLE_DNS_: 'unbound#5053'
+        FTLCONF_dns_upstreams: 'unbound#5053'
+        FTLCONF_dns_listeningMode : 'all'
       # Volumes store your data between container upgrades
       volumes:
         - './etc-pihole:/etc/pihole'
