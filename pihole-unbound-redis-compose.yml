@@ -1,6 +1,6 @@
 services:
   redis:
-    image: redis:alpine
+    image: redis:7.2.4-alpine3.19
     environment: 
       - TZ=America/New_York
     hostname: redis
@@ -17,7 +17,7 @@ services:
     depends_on:
       - tmp
   unbound:
-    image: crazymax/unbound
+    image: crazymax/unbound:1.19.3
     hostname: unbound
     environment: 
       - TZ=America/New_York
@@ -38,8 +38,7 @@ services:
       volumes:
           - /tmp/docker        
   pihole:
-      image: pihole/pihole:latest
-      hostname: ${PIHOLE_HOSTNAME:-pihole}
+      image: pihole/pihole:2024.05.0
       dns:
         - 127.0.0.1
         - 8.8.8.8
@@ -58,4 +57,4 @@ services:
       #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
       depends_on:
         - unbound
-      restart: always
+      restart: unless-stopped
