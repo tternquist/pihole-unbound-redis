@@ -48,6 +48,7 @@ services:
         - "53:53/udp"
          # Change the host port if there is a conflict
         - "80:80/tcp"
+        - "443:443/tcp"
       environment:
         TZ: 'America/New_York'
         FTLCONF_dns_upstreams: 'unbound#5053' 
