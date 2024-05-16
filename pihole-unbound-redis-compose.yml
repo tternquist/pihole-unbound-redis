@@ -53,10 +53,10 @@ services:
         FTLCONF_dns_upstreams: 'unbound#5053' 
         FTLCONF_dns_listeningMode : 'all' # needed when docker in bridge network mode
         FTLCONF_dns_cache_optimizer: -1 # disable serve expired at the pihole layer (unbound will do this)
-        FTLCONF_dns_rateLimit_count: 0,
-        FTLCONF_dns_rateLimit_interval: 0,
+        FTLCONF_dns_rateLimit_count: 0
+        FTLCONF_dns_rateLimit_interval: 0
         FTLCONF_webserver_session_timeout: ${PIHOLE_SESSION_TIMEOUT:-2592000}
-
+        FTLCONF_database_maxDBdays: 8 # reduced from 91
         # Volumes store your data between container upgrades
       volumes:
         - './etc-pihole:/etc/pihole'
