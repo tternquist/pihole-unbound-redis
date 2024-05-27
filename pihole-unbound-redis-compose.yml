@@ -57,7 +57,10 @@ services:
         FTLCONF_dns_rateLimit_count: 0
         FTLCONF_dns_rateLimit_interval: 0
         FTLCONF_webserver_session_timeout: ${PIHOLE_SESSION_TIMEOUT:-2592000}
-        FTLCONF_database_maxDBdays: 8 # reduced from 91
+        FTLCONF_database_maxDBdays: ${PIHOLE_MAX_DB_DAYS:-8} # reduced from 91
+        FTLCONF_database_DBinterval: ${DB_INTERVAL:-60}
+        FTLCONF_misc_nice: ${NICE_VALUE:--10}
+
         # Volumes store your data between container upgrades
       volumes:
         - './etc-pihole:/etc/pihole'
