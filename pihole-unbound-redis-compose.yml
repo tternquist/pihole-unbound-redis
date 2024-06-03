@@ -68,7 +68,7 @@ services:
       #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
       depends_on:
         - unbound
-      restart: unless-stopped
+      restart: always
       cap_add:
         - SYS_NICE
       labels:
