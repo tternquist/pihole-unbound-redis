@@ -39,6 +39,7 @@ services:
           - /tmp/docker        
   pihole:
       image: pihole/pihole:development-v6
+      shm_size: '256mb' 
       hostname: ${PIHOLE_HOSTNAME:-pihole}
       dns:
         - 127.0.0.1
